@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Man! I feel like a snake!!!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Man! I feel like a snake!!! x<span id="score">0</span>!!!</h1>
+        <div class="game-wrapper">
+            <div class="left-side-content">
+                <button class="robot-button" id="robotButton">Deploy Robo-Snake!!!</button>
+                <img src="regina.png" alt="Regina" class="regina-image"> 
+            </div>
+            <canvas id="gameCanvas" width="600" height="400"></canvas>
+            <div class="right-side-content">
+                <div class="leaderboard-wrapper">
+                    <div id="leaderboard" class="leaderboard">
+                        <h2>All Stars!!!</h2>
+                        <table id="leaderboardTable"></table> <!-- Empty table to display leaderboard -->
+                    </div>
+                </div>
+                <img src="sharpay.png" alt="Sharpay" class="sharpay-image">
+            </div>
+        </div>
+        <div id="controls">
+            <button class="arrow-btn" id="upButton">&#8593;</button>
+            <div>
+                <button class="arrow-btn" id="leftButton">&#8592;</button>
+                <button class="arrow-btn" id="downButton">&#8595;</button>
+                <button class="arrow-btn" id="rightButton">&#8594;</button>
+            </div>
+            </div>
+    </div>
+
+    <!-- Score Window -->
+    <div id="scoreWindow" class="score-window">
+        <h2>Game Over!!!</h2>
+        <p>Your final score is: <span id="finalScore">0</span></p>
+        <p>Please contact Leonie to be added to the leaderboard!</p>
+        <p>(Sorry I don't have a server ¯\_(^_^)_/¯)</p>
+        <button id="restartButton">Close</button>
+    </div>
+
+    <script src="static/script.js"></script>
+    <script>
+        // Fetch and display leaderboard data from CSV
+        fetch('leaderboard.csv')
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split('\n');
+                let html = '';
+                for (let i = 0; i < rows.length; i++) {
+                    const cells = rows[i].split(',');
+                    html += '<tr>';
+                    for (let j = 0; j < cells.length; j++) {
+                        if (i === 0) {
+                            html += '<th class="align-right">' + cells[j] + '</th>';
+                        } else {
+                            html += '<td class="align-right">' + cells[j] + '</td>';
+                        }
+                    }
+                    html += '</tr>';
+                }
+                document.getElementById('leaderboardTable').innerHTML = html;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

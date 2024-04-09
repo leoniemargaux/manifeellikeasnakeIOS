@@ -8,7 +8,7 @@ const SNAKE_COLOUR = "#F984EF"; // Light purple
 const FOOD_COLOUR = "#00CCCC"; // Dark cyan
 
 // Set snake properties
-const BLOCK_SIZE = 20;
+const BLOCK_SIZE = 30;
 
 // Define directions
 const UP = 0;
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Update the score display
             document.getElementById('score').textContent = snake.score;
             
-        }, 1000 / 15); // Adjust the speed as needed
+        }, 1000 / 20); // Adjust the speed as needed
     }
 
     // Function to find the direction that minimizes the Manhattan distance to the food while avoiding collisions
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             requestAnimationFrame(gameLoop);
-        }, 1000 / 15); // Adjust the divisor value to change the speed (lower value -> faster speed)
+        }, 1000 / 20); // Adjust the divisor value to change the speed (lower value -> faster speed)
     }
 
     // Start the game loop

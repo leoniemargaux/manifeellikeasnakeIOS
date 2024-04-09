@@ -65,10 +65,11 @@ canvas {
     background-color: rgb(230, 230, 250); 
     border: 2px solid rgb(177, 156, 217); 
     border-radius: 5px; 
-    width: 30px; 
-    height: 30px; 
+    width: 33%; 
+    aspect-ratio: 1/1;
     font-size: 20px; 
     cursor: pointer; 
+    text-align: center;
 }
 
 .game-wrapper {
@@ -77,24 +78,6 @@ canvas {
     align-items: center; 
     position: relative;
     max-width: 100%; 
-}
-
-.left-side-content, .right-side-content {
-    width: 18%;
-}
-
-.left-side-content {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.right-side-content {
-    position: static; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .robot-button {
@@ -108,40 +91,4 @@ canvas {
     font-family: "Times New Roman";
     font-weight: bold;
     font-size: 20px;
-}
-
-.leaderboard-wrapper {
-    background-color: rgb(230, 230, 250); 
-    border: 4px solid rgb(177, 156, 217);
-    border-radius: 5px; 
-    padding: 5px;
-    margin: 0;
-    text-align: center;
-}
-
-.leaderboard-wrapper p {
-    margin: 0; 
-}
-
-.leaderboard-wrapper h2 {
-    margin: 0;
-}
-
-.leaderboard-wrapper th,
-.leaderboard-wrapper td {
-    text-align: right; 
-}
-
-.align-right {
-    text-align: right;
-}
-
-.sharpay-image {
-    max-width: 200px; 
-    margin-top: 0px; 
-}
-
-.regina-image {
-    max-width: 200px; 
-    margin-top: 0px; 
 }

@@ -55,6 +55,7 @@ canvas {
     background-color: rgb(255,179,222); 
     border: 2px solid rgb(255,105,180);
     border-radius: 5px; 
+    color: #000000;
 }
 
 #controls {
@@ -71,7 +72,7 @@ canvas {
 }
 
 .arrow-btn {
-    color: black;
+    color: #000000;
     background-color: rgb(230, 230, 250);
     border: 8px solid rgb(177, 156, 217);
     border-radius: 10px;
@@ -103,7 +104,6 @@ canvas {
 
 
 .robot-button {
-    color: black;
     width: 100%;
     background-color: rgb(230, 230, 250); 
     border: 8px solid rgb(177, 156, 217);
@@ -114,4 +114,5 @@ canvas {
     font-family: "Times New Roman";
     font-weight: bold;
     font-size: 50px;
+    color: #000000;
 }

@@ -8,7 +8,7 @@ const SNAKE_COLOUR = "#F984EF"; // Light purple
 const FOOD_COLOUR = "#00CCCC"; // Dark cyan
 
 // Set snake properties
-const BLOCK_SIZE = 30;
+const BLOCK_SIZE = 20;
 
 // Define directions
 const UP = 0;

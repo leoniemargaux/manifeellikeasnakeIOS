@@ -12,15 +12,19 @@
     <div class="container">
         <h1>Man! I feel like a snake!!! x<span id="score">0</span>!!!</h1>
         <div class="game-wrapper">
+            <div class="top-content">
+                <button class="robot-button" id="robotButton">Deploy Robo-Snake!!!</button>
+            </div>
             <canvas id="gameCanvas" width="600" height="400"></canvas>
+            
         </div>
         <div id="controls">
-            <button class="arrow-btn" id="upButton">&#8593;</button>
-            <div>
-                <button class="arrow-btn" id="leftButton">&#8592;</button>
+            <button class="arrow-btn" id="leftButton">&#8592;</button>
+            <div class="vertical-arrows">
+                <button class="arrow-btn" id="upButton">&#8593;</button>
                 <button class="arrow-btn" id="downButton">&#8595;</button>
-                <button class="arrow-btn" id="rightButton">&#8594;</button>
             </div>
+            <button class="arrow-btn" id="rightButton">&#8594;</button>
             </div>
     </div>
 
@@ -28,34 +32,9 @@
     <div id="scoreWindow" class="score-window">
         <h2>Game Over!!!</h2>
         <p>Your final score is: <span id="finalScore">0</span></p>
-        <p>Please contact Leonie to be added to the leaderboard!</p>
-        <p>(Sorry I don't have a server ¯\_(^_^)_/¯)</p>
         <button id="restartButton">Close</button>
     </div>
 
     <script src="static/script.js"></script>
-    <script>
-        // Fetch and display leaderboard data from CSV
-        fetch('leaderboard.csv')
-            .then(response => response.text())
-            .then(data => {
-                const rows = data.split('\n');
-                let html = '';
-                for (let i = 0; i < rows.length; i++) {
-                    const cells = rows[i].split(',');
-                    html += '<tr>';
-                    for (let j = 0; j < cells.length; j++) {
-                        if (i === 0) {
-                            html += '<th class="align-right">' + cells[j] + '</th>';
-                        } else {
-                            html += '<td class="align-right">' + cells[j] + '</td>';
-                        }
-                    }
-                    html += '</tr>';
-                }
-                document.getElementById('leaderboardTable').innerHTML = html;
-            })
-            .catch(error => console.error('Error:', error));
-    </script>
 </body>
 </html>

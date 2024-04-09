@@ -1,5 +1,4 @@
 body, html {
-    height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -11,19 +10,21 @@ body, html {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    font-size: 50px;
 }
 
 canvas {
-    margin-bottom: 20px;
-    width: 60%;
-    max-width: 600px; 
+    margin-bottom: 0px;
+    width: 100%;
     border: 8px solid rgb(177,156,217); 
     border-radius: 10px; 
     position: relative; 
+    box-sizing: border-box;
 }
 
 
@@ -36,7 +37,7 @@ canvas {
     background-color: rgb(255,221,244); 
     padding: 20px;
     border: 4px solid rgb(255,179,222);
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
     z-index: 9999;
 }
@@ -57,38 +58,59 @@ canvas {
 }
 
 #controls {
-    margin-top: -10px; 
+    margin-top: 0px;
+    width: 100%;
+    display: flex;
+}
+
+.vertical-arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%; 
 }
 
 .arrow-btn {
-    color: black; 
-    background-color: rgb(230, 230, 250); 
-    border: 2px solid rgb(177, 156, 217); 
-    border-radius: 5px; 
-    width: 33%; 
-    aspect-ratio: 1/1;
-    font-size: 20px; 
-    cursor: pointer; 
-    text-align: center;
+    color: black;
+    background-color: rgb(230, 230, 250);
+    border: 8px solid rgb(177, 156, 217);
+    border-radius: 10px;
+    width: 100%; 
+    aspect-ratio: 1/1; 
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0; 
 }
+
 
 .game-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center; 
     align-items: center; 
     position: relative;
-    max-width: 100%; 
+    width: 100%; 
 }
 
+.top-content {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+
 .robot-button {
-    max-width: 140px;
+    width: 100%;
     background-color: rgb(230, 230, 250); 
-    border: 4px solid rgb(177, 156, 217);
-    border-radius: 5px; 
+    border: 8px solid rgb(177, 156, 217);
+    border-radius: 10px; 
     padding: 5px;
     margin: 0;
     text-align: center;
     font-family: "Times New Roman";
     font-weight: bold;
-    font-size: 20px;
+    font-size: 50px;
 }

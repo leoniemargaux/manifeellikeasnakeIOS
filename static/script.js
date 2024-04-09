@@ -23,7 +23,7 @@ class Snake {
         this.positions = [{ x: SCREEN_WIDTH / 2, y: SCREEN_HEIGHT / 2 }];
         this.direction = [{ x: 0, y: -1 }, { x: 0, y: 1 }, { x: -1, y: 0 }, { x: 1, y: 0 }][Math.floor(Math.random() * 4)]; // Random initial direction
         this.color = SNAKE_COLOUR;
-        this.score = 1;
+        this.score = 0;
         this.scores = [];
         this.gameOver = false; // Added game over flag
         this.game_over_sound = new Audio("static/sounds/explode.mp3");
@@ -233,6 +233,42 @@ document.addEventListener("DOMContentLoaded", function() {
         return minDirection;
     }
 
+    
+    // Event listener for restart button click
+    restartButton.addEventListener("click", function() {
+        // Hide score window
+        scoreWindow.style.display = "none";
+        startGame();
+    });
+
+    // Game loop
+    function gameLoop() {
+        setTimeout(function() {
+        
+            // Move snake and draw game elements
+            snake.move(food);
+            ctx.fillStyle = BACKGROUND_COLOUR;
+            ctx.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+            snake.draw(ctx);
+            food.draw(ctx);
+
+            // Update the score display
+            document.getElementById('score').textContent = snake.score;
+
+            if (snake.gameOver) {
+                displayFinalScore();
+                snake.scores = [];
+                snake.score = 0;
+                snake.gameOver = false;
+            }
+
+            requestAnimationFrame(gameLoop);
+        }, 1000 / 20); // Adjust the divisor value to change the speed (lower value -> faster speed)
+    }
+
+    // Start the game loop
+    gameLoop();
+    
     // Function to display the final score window
     function displayFinalScore() {
         scoreWindow.style.display = "block";
@@ -266,39 +302,4 @@ document.addEventListener("DOMContentLoaded", function() {
         // Set the background color to the selected shade of pink
         document.body.style.backgroundColor = `rgb(${randomPink[0]}, ${randomPink[1]}, ${randomPink[2]})`;
     }
-
-    // Event listener for restart button click
-    restartButton.addEventListener("click", function() {
-        // Hide score window
-        scoreWindow.style.display = "none";
-        snake.gameOver = false;
-        startGame();
-    });
-
-    // Game loop
-    function gameLoop() {
-        setTimeout(function() {
-        
-            // Move snake and draw game elements
-            snake.move(food);
-            ctx.fillStyle = BACKGROUND_COLOUR;
-            ctx.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-            snake.draw(ctx);
-            food.draw(ctx);
-
-            // Update the score display
-            document.getElementById('score').textContent = snake.score;
-
-            if (snake.score == 0) {
-                displayFinalScore();
-                snake.scores = [];
-                snake.score = 1;
-            }
-
-            requestAnimationFrame(gameLoop);
-        }, 1000 / 20); // Adjust the divisor value to change the speed (lower value -> faster speed)
-    }
-
-    // Start the game loop
-    gameLoop();
 });

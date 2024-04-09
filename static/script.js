@@ -237,34 +237,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function displayFinalScore() {
         scoreWindow.style.display = "block";
         document.getElementById("finalScore").textContent = Math.max(...snake.scores);
-        // Array of different shades of pink
-        const pinkShades = [
-            [255, 182, 193], // Light Pink
-            [255, 192, 203], // Pink
-            [255, 228, 225], // Misty Rose
-            [255, 105, 180], // Hot Pink
-            [219, 112, 147], // Pale Violet Red
-            [255, 20, 147], // Deep Pink
-            [228, 0, 124], // Mexican Pink
-            [252, 15, 192], // Shocking Pink
-            [226, 80, 152], // Raspberry Pink
-            [236, 88, 149], // Cherry Blossom Pink
-            [255, 181, 197], // Carnation Pink
-            [255, 110, 180], // Flamingo Pink
-            [236, 193, 204], // Pink Lace
-            [255, 160, 122], // Peach Pink
-            [254, 183, 165], // Tea Rose
-            [255, 153, 153], // Bubble Gum Pink
-            [255, 182, 193], // Piggy Pink
-            [255, 192, 203], // Tickle Me Pink
-            [255, 182, 193], // Cotton Candy Pink
-            [255, 192, 203], // Lavender Pink
-        ];
-        // Randomly select an RGB value from the array
-        const randomIndex = Math.floor(Math.random() * pinkShades.length);
-        const randomPink = pinkShades[randomIndex];
-        // Set the background color to the selected shade of pink
-        document.body.style.backgroundColor = `rgb(${randomPink[0]}, ${randomPink[1]}, ${randomPink[2]})`;
     }
 
     // Event listener for restart button click

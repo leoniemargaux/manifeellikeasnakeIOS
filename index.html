@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Man! I feel like a snake!!!</title>
     <link rel="apple-touch-icon" href="icon.png">
@@ -11,22 +11,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>Man! I feel like a snake!!! x<span id="score">0</span>!!!</h1>
+        <h1><span>Man! I feel like a snake!!! <span id="score">0</span>!!!</span></h1>
         <div class="game-wrapper">
             <div class="top-content">
                 <button class="robot-button" id="robotButton">Deploy Robo-Snake!!!</button>
             </div>
-            <canvas id="gameCanvas" width="600" height="400"></canvas>
-            
+            <canvas id="gameCanvas" width="600" height="400"></canvas>       
         </div>
         <div id="controls">
-            <button class="arrow-btn" id="leftButton">&#8592;</button>
+            <button class="arrow-btn" id="leftButton"><span>&#8592;</span></button>
             <div class="vertical-arrows">
-                <button class="arrow-btn" id="upButton">&#8593;</button>
-                <button class="arrow-btn" id="downButton">&#8595;</button>
+                <button class="arrow-btn" id="upButton"><span>&#8593;</span></button>
+                <button class="arrow-btn" id="downButton"><span>&#8595;</span></button>
             </div>
-            <button class="arrow-btn" id="rightButton">&#8594;</button>
-            </div>
+            <button class="arrow-btn" id="rightButton"><span>&#8594;</span></button>
+        </div>
     </div>
 
     <!-- Score Window -->

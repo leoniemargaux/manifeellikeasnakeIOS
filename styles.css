@@ -1,5 +1,5 @@
 body, html {
-    background-color: rgb(177,156,217);
+    background-image: url('pink.png');
     margin: 0;
     display: flex;
     justify-content: center;
@@ -14,15 +14,22 @@ body, html {
     width: 100%;
 }
 
-h1 {
-    margin-bottom: 0px;
+h1 span {
+    background-color: #1CDADA;
+    color: #000000; 
     font-size: 50px;
+    padding: 1px;
 }
+
+h1 {
+    margin: 0px;
+}
+
 
 canvas {
     margin-bottom: 0px;
     width: 100%;
-    border: 8px solid rgb(177,156,217); 
+    border: 8px solid #000000; 
     border-radius: 10px; 
     position: relative; 
     box-sizing: border-box;
@@ -73,15 +80,22 @@ canvas {
 }
 
 .arrow-btn {
-    color: #000000;
-    background-color: rgb(255,221,244); 
-    border: 8px solid rgb(177, 156, 217);
+    background-image: url('leopard.png');
+    border: 8px solid #000000;
     border-radius: 10px;
     width: 100%; 
     aspect-ratio: 1/1; 
-    font-size: 40px;
     cursor: pointer;
     margin: 0; 
+}
+
+.arrow-btn span {
+    background-color: #E0C6AB; 
+    padding: 10px 10px; /* Adjust padding as needed */
+    color: #000000; 
+    font-size: 40px;
+    border: 8px solid #000000;
+    border-radius: 10px;
 }
 
 
@@ -106,8 +120,8 @@ canvas {
 
 .robot-button {
     width: 100%;
-    background-color: rgb(253, 162, 198); 
-    border: 8px solid rgb(177, 156, 217);
+    background-color: #FF5DB0; 
+    border: 8px solid #000000;
     border-radius: 10px; 
     padding: 5px;
     margin: 0;

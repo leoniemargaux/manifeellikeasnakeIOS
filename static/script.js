@@ -3,9 +3,9 @@ const SCREEN_WIDTH = 600;
 const SCREEN_HEIGHT = 400;
 
 // Set colors
-const BACKGROUND_COLOUR = "#E6E6FA"; // Lavender
-const SNAKE_COLOUR = "#F984EF"; // Light purple
-const FOOD_COLOUR = "#00CCCC"; // Dark cyan
+const BACKGROUND_COLOUR = "#E0C6AB"; 
+const SNAKE_COLOUR = "#FF5DB0"; 
+const FOOD_COLOUR = "#1CDADA"; 
 
 // Set snake properties
 const BLOCK_SIZE = 20;

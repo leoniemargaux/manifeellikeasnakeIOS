@@ -19,10 +19,11 @@ h1 span {
     color: #000000; 
     font-size: 50px;
     padding: 1px;
+    border-radius: 10px; 
 }
 
 h1 {
-    margin: 0px;
+    margin-top: 10px;
 }
 
 

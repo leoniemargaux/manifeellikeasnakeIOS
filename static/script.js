@@ -27,13 +27,6 @@ class Snake {
         this.scores = [];
         this.gameOver = false; // Added game over flag
         this.game_over_sound = new Audio("static/sounds/explode.mp3");
-        // Initialize an empty array to store MP3 file names in the 'sounds' directory
-        this.eat_sounds = [];
-        // Load all MP3 files from the 'sounds' directory
-        const soundFiles = ['boy.mp3','fetch.mp3', 'fluffy.mp3', 'man.mp3', 'stomach.mp3', 'what.mp3', 'unicorn.mp3']; 
-        soundFiles.forEach(file => {
-            this.eat_sounds.push(new Audio("static/sounds/" + file));
-        });
     }
 
     get_head_position() {
@@ -65,9 +58,6 @@ class Snake {
                 this.length += 1;
                 this.score += 1;
                 this.scores.push(this.score);
-                // Play a random sound from the 'eat_sounds' array
-                const randomIndex = Math.floor(Math.random() * this.eat_sounds.length);
-                this.eat_sounds[randomIndex].play();
                 food.randomize_position();
             }
         }
